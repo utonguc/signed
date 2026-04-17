@@ -1,0 +1,3 @@
+-- Seed data placeholder
+-- Default admin is created automatically by signed_api on first startup
+-- via ADMIN_EMAIL / ADMIN_PASSWORD environment variables.
