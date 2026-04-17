@@ -116,6 +116,13 @@ function Navbar() {
         <div className="nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
           <a href="#ozellikler" className="nav-link" style={{ color: "#94a3b8", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Özellikler</a>
           <a href="#fiyat" className="nav-link" style={{ color: "#94a3b8", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Fiyatlandırma</a>
+          <a href="https://app.signed.xshield.com.tr/login" style={{
+            padding: "9px 22px",
+            background: "transparent",
+            border: "1px solid rgba(139,92,246,0.4)",
+            borderRadius: 8, color: "#a78bfa", textDecoration: "none",
+            fontSize: 14, fontWeight: 600,
+          }}>Giriş Yap</a>
           <a href="#iletisim" style={{
             padding: "9px 22px",
             background: "linear-gradient(135deg, #8b5cf6, #6d28d9)",
@@ -145,7 +152,7 @@ function Navbar() {
           background: "rgba(6,13,31,0.98)", borderTop: "1px solid rgba(139,92,246,0.15)",
           padding: "16px 24px 24px", display: "flex", flexDirection: "column", gap: 4,
         }}>
-          {[["Özellikler","#ozellikler"],["Fiyatlandırma","#fiyat"],["Demo Talep Et","#iletisim"]].map(([label, href]) => (
+          {[["Özellikler","#ozellikler"],["Fiyatlandırma","#fiyat"],["Giriş Yap","https://app.signed.xshield.com.tr/login"],["Demo Talep Et","#iletisim"]].map(([label, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)} style={{
               color: "#94a3b8", textDecoration: "none", fontSize: 16, fontWeight: 500,
               padding: "10px 0", borderBottom: "1px solid rgba(139,92,246,0.08)",
