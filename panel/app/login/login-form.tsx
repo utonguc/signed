@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, FormEvent } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Footer from "@/components/footer";
 import LanguageSwitcher from "@/components/language-switcher";
@@ -9,12 +9,14 @@ import { useLang } from "@/lib/i18n/context";
 
 export default function LoginForm() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const { T } = useLang();
-  const [error, setError] = useState(
-    searchParams.get("error") ? T.login.oauth_error : ""
-  );
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("error")) setError(T.login.oauth_error);
+  }, [T.login.oauth_error]);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
